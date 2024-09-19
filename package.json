@@ -1,27 +1,22 @@
 {
-  "name": "prestonsblog",
+  "name": "faithful-filament",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.1",
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/tailwind": "^4.0.0",
-    "@fontsource-variable/noto-serif-georgian": "^5.0.3",
-    "@fontsource/twinkle-star": "^5.0.3",
-    "astro": "^2.9.2",
-    "flowbite": "^1.6.6",
-    "sharp": "^0.32.4",
-    "tailwindcss": "^3.3.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
-    "supabase": "^1.75.3"
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.6",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.1",
+    "astro": "^4.15.7",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
   }
 }

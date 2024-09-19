@@ -1,60 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import BlogCard from '../components/BlogCard.astro'
-const allPosts = await Astro.glob('../pages/articles/*.md');
-const latestPosts = allPosts.slice(0, 3);
+import BaseHead from '../components/BaseHead.astro';
+// import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout title="Welcome">
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
 
-    <section class="text-center py-20">
-        <h1 class="text-4xl font-bold">Welcome to Our Blog</h1>
-        <p class="mt-4 text-xl">Sharing insights and ideas on various interesting topics.</p>
-    </section>
-    
-
-    <section class="py-6 px-6 md:px-20">
-        <h2 class="text-2xl font-bold mb-6">About</h2>
-        <p class="text-lg">Our blog about philosophy, economics, technology, and anything else.</p>
-    </section>
-
- 
-
-
-    <section class="py-16 px-6 md:px-20">
-        <h2 class="text-2xl font-bold mb-6">Newsletter</h1>
-        <p class="text-lg">
-            Join our free newsletter. 
-            <br/> - "Very good newsletter"
-        </p>
-        <br>
-        <iframe
-         scrolling="no"
-         style="width:100%!important;height:220px;border:1px #FFFFFF solid !important"
-         src="https://buttondown.email/sandhead?as_embed=true"
-         ></iframe><br /><br />
-
-    </section>
-
-
-    <section class="py-16 px-6 md:px-20">
-        <h2 class="text-2xl font-bold mb-6">Latest Posts</h2>
-        <div class="flex justify-between items-start flex-wrap">
-            {latestPosts.map((post) => {
-                return (
-                    <div class="w-full md:w-1/3 mb-6 md:mb-0 px-2">
-                        <BlogCard
-                            title={post.frontmatter.title}
-                            href={post.url}
-                            description={post.frontmatter.description}
-                            date={post.frontmatter.pubDate.slice(0,10)}
-                            imageSrc={post.frontmatter.image.url}
-                            imageAlt={post.frontmatter.image.alt}
-                        />
-                    </div>
-                );
-            })}
-        </div>
-    </section>
-
-</Layout>
+		<main>
+			<h1>Hello</h1>
+			<p>I'm Preston, and I created this website to teach everyone about the beautiful world of Graph Neural Networks and Geometric Deep Learning. In this website
+				you can find all the resources that will teach you the theory behind GNNs and how to apply them for your specific task. The goal for this website is merely
+				to provide a dictionary of a bunch of great resources. If you have any suggestions, comments,
+				concerns, or questions, please feel free to send me an email at preston@sandhead.net. Enjoy!
+			</p>
+			<h3>Getting Started:</h3>
+			<h4>Books:</h4>
+			<p>Graph Representation Learning Book (William Hamilton, McGill University): <a href="https://www.cs.mcgill.ca/~wlh/grl_book/" target="_blank">https://www.cs.mcgill.ca/~wlh/grl_book/</a>
+			</p>
+			
+			
+			
+		</main>
+		<Footer />
+	</body>
+</html>
